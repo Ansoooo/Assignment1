@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 212.8
+    x: 450.4
     y: 50.4
     width: 999.2
     height: 806.4
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 685, y: 494}
   m_MaxSize: {x: 14006, y: 14044}
   vertical: 0
-  controlID: 113
+  controlID: 116
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -319,7 +319,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 212.8
+    x: 450.4
     y: 458.4
     width: 709
     height: 360
@@ -337,19 +337,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\clank\Desktop\TutorialUnity\A1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 8e2c0000
-    m_LastClickedID: 11406
+    m_SelectedIDs: e02d0000
+    m_LastClickedID: 11744
     m_ExpandedIDs: 000000008e2c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 921.60004
+    x: 1159.2001
     y: 80.8
     width: 289
     height: 738
@@ -491,7 +491,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 212.8
+    x: 450.4
     y: 80.8
     width: 214
     height: 359
@@ -501,7 +501,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 76fbffff
+      m_ExpandedIDs: 78fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -546,7 +546,7 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 427.2
+    x: 664.8
     y: 80.8
     width: 493
     height: 359
@@ -561,9 +561,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -74.24439, y: 55.110645, z: -431.0936}
+    m_Target: {x: -72.844864, y: 55.828167, z: -431.40775}
     speed: 2
-    m_Value: {x: -74.24439, y: 55.110645, z: -431.0936}
+    m_Value: {x: -72.844864, y: 55.828167, z: -431.40775}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -592,9 +592,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.028095461, y: -0.088352256, z: 0.00249397, w: -0.9956926}
+    m_Target: {x: -0.021900535, y: -0.16569394, z: 0.0036815298, w: -0.98592985}
     speed: 2
-    m_Value: {x: -0.029588886, y: -0.08834817, z: 0.0026264898, w: -0.9956466}
+    m_Value: {x: -0.021900535, y: -0.16569392, z: 0.0036815298, w: -0.98592985}
   m_Size:
     m_Target: 10
     speed: 2
