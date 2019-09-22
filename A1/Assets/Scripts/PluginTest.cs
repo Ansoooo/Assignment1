@@ -4,6 +4,12 @@ using UnityEngine;
 using System.Runtime.InteropServices;
 public class PluginTest : MonoBehaviour // <- name of script
 {
+    public GameObject Prefab;
+    public GameObject[] instObjects;
+    public int objectIndex;
+    public int maxSpawnedObjects;
+    public Vector3 position = new Vector3(0f, 0f, 0f);
+
     const string DLL_NAME = "A1"; // <- name of plugin
     [DllImport(DLL_NAME)]
     private static extern int SimpleFunction();
@@ -21,10 +27,35 @@ public class PluginTest : MonoBehaviour // <- name of script
     {
         if (Input.GetKeyDown(KeyCode.S))
         {
-            savePosi(1.0f, 2.0f, 3.0f, 0);
-            Debug.Log(getPosiX(0));
-            Debug.Log(getPosiY(0));
-            Debug.Log(getPosiZ(0));
+            //Debug.Log(SimpleFunction());
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast (ray, out hit))
+            {
+                maxSpawnedObjects = objectIndex;
+                Vector3 position = new Vector3(hit.point.x - hit.point.x / 8, hit.point.y - hit.point.y / 8, hit.point.z - hit.point.z / 8);
+                instObjects[objectIndex] = Instantiate(Prefab, position, Quaternion.identity);
+                savePosi(position.x, position.y, position.z, objectIndex);
+                objectIndex += 1;
+                maxSpawnedObjects += 1;
+            }
         }          
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (objectIndex > 0 && maxSpawnedObjects - objectIndex != 20)
+            {
+                objectIndex -= 1;
+                Destroy(instObjects[objectIndex]);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (objectIndex < maxSpawnedObjects)
+            {
+                Vector3 position = new Vector3(getPosiX(objectIndex), getPosiY(objectIndex), getPosiZ(objectIndex));
+                instObjects[objectIndex] = Instantiate(Prefab, position, Quaternion.identity);
+                objectIndex += 1;
+            }
+        }
     }
 }
