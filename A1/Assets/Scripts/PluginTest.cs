@@ -25,7 +25,7 @@ public class PluginTest : MonoBehaviour // <- name of script
  
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             //Debug.Log(SimpleFunction());
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
