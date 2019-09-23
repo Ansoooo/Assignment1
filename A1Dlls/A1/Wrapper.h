@@ -12,9 +12,11 @@ extern "C"
 
 	// operationTracker Functions
 	PLUGIN_API void savePosi(float, float, float, int);
+	PLUGIN_API void saveType(int, int);
 	PLUGIN_API float getPosiX(int);
 	PLUGIN_API float getPosiY(int);
 	PLUGIN_API float getPosiZ(int);
+	PLUGIN_API int getType(int);
 
 #ifdef __cplusplus
 }

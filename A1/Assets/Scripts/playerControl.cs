@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerControl : MonoBehaviour
 {
-    private float jumpVelocity = 15.0f;
+    private float jumpVelocity = 12.5f;
     private float fallMulti = 10.0f;
     private float lowFallMulti = 8.0f;
     Rigidbody rb;
