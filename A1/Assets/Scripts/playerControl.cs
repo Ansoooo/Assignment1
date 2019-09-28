@@ -6,20 +6,24 @@ public class playerControl : MonoBehaviour
 {
     private float jumpVelocity = 15.0f;
     private float fallMulti = 20.0f;
-    private float lowFallMulti = 15.0f;
+    private float lowFallMulti = 5.0f;
     Rigidbody rb;
 
     public bool groundState;
+    public bool liveState;
     Collider cl;
 
+    //RETRIEVE COMPONENTS
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         cl = GetComponent<Collider>();
     }
+
+    //MANAGE PLAYER
     void updateState()
     {
-        // ++ +- -+ -- corners
+        //++ +- -+ -- corners of player object, so we can corner jump.
         if (Physics.Raycast(new Vector3(transform.position.x + transform.localScale.x, transform.position.y, transform.position.z + transform.localScale.z), -Vector3.up, cl.bounds.extents.y + 0.1f) || Physics.Raycast(new Vector3(transform.position.x + transform.localScale.x, transform.position.y, transform.position.z - transform.localScale.z), -Vector3.up, cl.bounds.extents.y + 0.1f) || Physics.Raycast(new Vector3(transform.position.x - transform.localScale.x, transform.position.y, transform.position.z + transform.localScale.z), -Vector3.up, cl.bounds.extents.y + 0.1f) || Physics.Raycast(new Vector3(transform.position.x - transform.localScale.x, transform.position.y, transform.position.z - transform.localScale.z), -Vector3.up, cl.bounds.extents.y + 0.1f))
         {
             groundState = true;
@@ -28,10 +32,17 @@ public class playerControl : MonoBehaviour
         {
             groundState = false;
         }
+
+        //If player falls off platform, they dead.
+        if (transform.position.y < -50.0f)
+        {
+            liveState = false;
+        }
+       
     }
     void movePlayer()
     {
-        // HORIZONTAL PLANAR MOVEMENTS
+        //Horizontal planar movement.
         if (Input.GetKey(KeyCode.W)) // Forward
         {
             transform.Translate(0f, 0f, 30f * Time.deltaTime);
@@ -49,7 +60,7 @@ public class playerControl : MonoBehaviour
             transform.Translate(30f * Time.deltaTime, 0f, 0f);
         }
 
-        //JUMP PHYSICS
+        //Jump check and physics.
         if (groundState == true)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -58,17 +69,25 @@ public class playerControl : MonoBehaviour
             }
         }
 
-        if (rb.velocity.y < 0f) // holding jump key
+        if (rb.velocity.y < 0f) //Holding jump key
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (fallMulti - 1) * Time.deltaTime;
         }
-        else if (rb.velocity.y > 0f && !Input.GetKey(KeyCode.Space)) // tapping jump key
+        else if (rb.velocity.y > 0f && !Input.GetKey(KeyCode.Space)) //Tapping jump key
         {
             rb.velocity += Vector3.up * Physics.gravity.y * (lowFallMulti - 1) * Time.deltaTime;
         }
+
+        //Death check and respawn player.
+        if(liveState == false)
+        {
+            Vector3 respawn = new Vector3(-29.0f, -14.5f, 6.0f);
+            transform.position = Vector3.MoveTowards(transform.position, respawn, 1000 * Time.deltaTime);
+            liveState = true;
+        }
     }
 
-    // Update is called once per frame
+    //UPDATE
     void Update()
     {
         updateState();
