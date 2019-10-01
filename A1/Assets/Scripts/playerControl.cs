@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class playerControl : MonoBehaviour
 {
+    private static playerControl _PControlInstance;
+    public static playerControl singletonGetInstance()
+    {
+        if (_PControlInstance == null) //If no instance, make one.
+        {
+            _PControlInstance = new playerControl();
+        }
+            return _PControlInstance;
+    }
+
     private float jumpVelocity = 15.0f;
-    private float fallMulti = 20.0f;
-    private float lowFallMulti = 5.0f;
-    Rigidbody rb;
 
     public bool groundState;
     public bool liveState;
@@ -16,7 +23,6 @@ public class playerControl : MonoBehaviour
     //RETRIEVE COMPONENTS
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
         cl = GetComponent<Collider>();
     }
 
@@ -68,15 +74,12 @@ public class playerControl : MonoBehaviour
                 GetComponent<Rigidbody>().velocity = Vector3.up * jumpVelocity;
             }
         }
+        
+        if (GetComponent<Rigidbody>().velocity.y < 0.0f) //When after peak of jump, increase gravity.
+        {
+            GetComponent<Rigidbody>().velocity = Vector3.up * Physics2D.gravity * 4;
+        }
 
-        if (rb.velocity.y < 0f) //Holding jump key
-        {
-            rb.velocity += Vector3.up * Physics.gravity.y * (fallMulti - 1) * Time.deltaTime;
-        }
-        else if (rb.velocity.y > 0f && !Input.GetKey(KeyCode.Space)) //Tapping jump key
-        {
-            rb.velocity += Vector3.up * Physics.gravity.y * (lowFallMulti - 1) * Time.deltaTime;
-        }
 
         //Death check and respawn player.
         if(liveState == false)

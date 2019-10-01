@@ -4,9 +4,19 @@ using UnityEngine;
 using System.Runtime.InteropServices;
 public class objectMemory : MonoBehaviour // <- name of script
 {
+    private static playerControl _objectMemInstance;
+    public static playerControl singletonGetInstance()
+    {
+        if (_objectMemInstance == null) //If no instance, make one.
+        {
+            _objectMemInstance = new playerControl();
+        }
+        return _objectMemInstance;
+    }
+
     private int changeObjectTo = 1;
     private GameObject switcherPrefab;
-
+    
     public GameObject Prefab;
     public GameObject Prefab2;
     public GameObject Prefab3;
