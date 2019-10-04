@@ -59,6 +59,7 @@ public class objectMemory : MonoBehaviour // <- name of script
             switcherPrefab = Prefab3;
         }
 
+        //Raycast method from https://answers.unity.com/questions/1397510/converting-mouse-position-to-worldpoint-in-3d.html
         //On right click cast ray from camera until hit, instantiate object at hit location. Save position and add to index for undo/redo functionality.
         if (Input.GetMouseButtonDown(1))
         {

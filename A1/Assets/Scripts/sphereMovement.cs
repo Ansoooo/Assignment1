@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Factory method from https://www.youtube.com/watch?v=n3YAuCsIWqA 
+
 public interface typeSpawner
 {
     void process(Transform a, Transform b);
@@ -49,11 +51,12 @@ public class spawnerFactory
 public class sphereMovement : MonoBehaviour
 {
     public GameObject player;
+    public GameObject winCondition;
 
     public List<typeSpawner> spawner = new List<typeSpawner>();
     spawnerFactory sFactory = new spawnerFactory();
 
-    int typeSwitcher = 1;
+    public int typeSwitcher = 1;
 
     private void Awake()
     {
@@ -64,6 +67,7 @@ public class sphereMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -82,11 +86,12 @@ public class sphereMovement : MonoBehaviour
             typeSwitcher = 3;
         }
 
-        if (typeSwitcher == 2)
+
+        if (typeSwitcher == 1)
         {
             spawner[0].process(transform, player.transform);
         }
-        else if (typeSwitcher == 3)
+        else if (typeSwitcher == 2)
         {
             spawner[1].process(transform, player.transform);
         }

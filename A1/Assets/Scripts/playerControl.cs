@@ -29,6 +29,7 @@ public class playerControl : MonoBehaviour
     //MANAGE PLAYER
     void updateState()
     {
+        //Raycast method from https://answers.unity.com/questions/196381/how-do-i-check-if-my-rigidbody-player-is-grounded.html
         //++ +- -+ -- corners of player object, so we can corner jump.
         if (Physics.Raycast(new Vector3(transform.position.x + transform.localScale.x, transform.position.y, transform.position.z + transform.localScale.z), -Vector3.up, cl.bounds.extents.y + 0.1f) || Physics.Raycast(new Vector3(transform.position.x + transform.localScale.x, transform.position.y, transform.position.z - transform.localScale.z), -Vector3.up, cl.bounds.extents.y + 0.1f) || Physics.Raycast(new Vector3(transform.position.x - transform.localScale.x, transform.position.y, transform.position.z + transform.localScale.z), -Vector3.up, cl.bounds.extents.y + 0.1f) || Physics.Raycast(new Vector3(transform.position.x - transform.localScale.x, transform.position.y, transform.position.z - transform.localScale.z), -Vector3.up, cl.bounds.extents.y + 0.1f))
         {
@@ -44,7 +45,6 @@ public class playerControl : MonoBehaviour
         {
             liveState = false;
         }
-       
     }
     void movePlayer()
     {
@@ -85,7 +85,7 @@ public class playerControl : MonoBehaviour
         if(liveState == false)
         {
             Vector3 respawn = new Vector3(-29.0f, -14.5f, 6.0f);
-            transform.position = Vector3.MoveTowards(transform.position, respawn, 1000 * Time.deltaTime);
+            transform.position = respawn;
             liveState = true;
         }
     }
