@@ -18,5 +18,6 @@ public class winBehaviour : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("yey");
+        Application.Quit();
     }
 }

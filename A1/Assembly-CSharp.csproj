@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{466856CD-94A6-DDDC-4CB4-37AA29677A37}</ProjectGuid>
+    <ProjectGuid>{FF0F6A47-E814-6D06-888D-DA04276966CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -64,34 +64,35 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\objectMemory.cs" />
     <Compile Include="Assets\Scripts\playerControl.cs" />
+    <Compile Include="Assets\Scripts\PluginTest.cs" />
     <Compile Include="Assets\Scripts\sphereMovement.cs" />
     <Compile Include="Assets\Scripts\winBehaviour.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/clank/Desktop/TutorialUnity/ActualA1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/clank/Documents/Assignment1Repo/Assignment1/A1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

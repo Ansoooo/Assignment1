@@ -95,5 +95,11 @@ public class playerControl : MonoBehaviour
     {
         updateState();
         movePlayer();
+
+        if(Input.GetKey("escape"))
+        {
+            Debug.Log("quit");
+            Application.Quit();
+        }
     }
 }

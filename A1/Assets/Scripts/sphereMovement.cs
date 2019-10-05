@@ -51,7 +51,6 @@ public class spawnerFactory
 public class sphereMovement : MonoBehaviour
 {
     public GameObject player;
-    public GameObject winCondition;
 
     public List<typeSpawner> spawner = new List<typeSpawner>();
     spawnerFactory sFactory = new spawnerFactory();
